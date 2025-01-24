@@ -4,17 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum Vitae - Oscar Soto Espinoza</title>
-    <link rel="stylesheet" href="style.css"> <!-- Vincula el archivo CSS -->
+    <link rel="stylesheet" href="style.css"> <!-- Vincula el archivo CSS externo -->
+    <style>
+        /* Estilos mínimos para visualizar correctamente el diseño */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117; /* Fondo oscuro futurista */
+            color: #e6e6e6; /* Texto claro */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #141e30, #243b55);
+        }
+
+        header img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #e6e6e6;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #243b55;
+            color: #0d1117;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #141e30;
+            color: #e6e6e6;
+        }
+    </style>
 </head>
 <body>
-    <!-- Encabezado -->
+    <!-- Encabezado con logotipo -->
     <header>
+        <img src="logotipo.png" alt="Logotipo Oscar Soto Espinoza">
         <h1>Oscar Soto Espinoza</h1>
         <p>Experto en Criminalística y Ciencias Forenses</p>
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#galeria">Galería</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -22,21 +94,33 @@
 
     <!-- Sección de inicio -->
     <section id="inicio">
-        <h2>Bienvenido a Mi Página Web</h2>
-        <p>Gracias por visitar mi página profesional. Aquí encontrarás información sobre mis habilidades, experiencia y cómo contactarme.</p>
-        <img src="portada.jpg" alt="Una imagen representativa sobre mi trabajo">
+        <h2>Bienvenido</h2>
+        <p>Explora mi perfil profesional en criminalística y ciencias forenses, con enfoque en tecnologías como drones e inteligencia artificial.</p>
+        <img src="portada.jpg" alt="Imagen representativa" style="border-radius: 15px; max-width: 80%;">
     </section>
 
     <!-- Sección "Sobre mí" -->
     <section id="sobre-mi">
         <h2>Sobre mí</h2>
-        <p>Hola, soy Oscar Soto Espinoza, experto en criminalística y ciencias forenses con amplia experiencia en tecnologias aplicadas a las ciencias forenses. Actualmente me encuentro trabajando en proyectos relacionados con tecnología aplicada a las ciencias forenses.</p>
+        <p>Hola, soy Oscar Soto Espinoza. Cuento con experiencia en proyectos tecnológicos aplicados a ciencias forenses, como análisis digital, simulaciones y manejo de RPAS (drones).</p>
+    </section>
+
+    <!-- Sección "Galería" -->
+    <section id="galeria">
+        <h2>Galería</h2>
+        <p>Explora algunos de los lugares, eventos y proyectos en los que he participado:</p>
+        <div class="gallery">
+            <img src="imagen1.jpg" alt="Proyecto tecnológico 1">
+            <img src="imagen2.jpg" alt="Lugar destacado 2">
+            <img src="imagen3.jpg" alt="Evento profesional 3">
+            <img src="imagen4.jpg" alt="Tecnología aplicada 4">
+        </div>
     </section>
 
     <!-- Sección de contacto -->
     <section id="contacto">
         <h2>Contacto</h2>
-        <p>¿Quieres saber más o colaborar conmigo? ¡Ponte en contacto!</p>
+        <p>¿Quieres saber más o colaborar conmigo? Contáctame:</p>
         <ul>
             <li>Email: <a href="mailto:oscar.soto@example.com">oscar.soto@example.com</a></li>
             <li>Teléfono: +52 123 456 7890</li>
@@ -47,8 +131,6 @@
     <footer>
         <p>&copy; 2025 Oscar Soto Espinoza. Todos los derechos reservados.</p>
     </footer>
-
-    <!-- Vinculación del archivo JavaScript -->
-    <script src="script.js"></script>
 </body>
 </html>
+
