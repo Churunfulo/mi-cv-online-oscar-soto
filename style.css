@@ -91,6 +91,9 @@ section#galeria {
     justify-content: center;
 }
 
+.grid-template-columns:{ repeat(4, 1fr); /* 4 columnas */
+                       }
+
 .galeria-item {
     width: calc(33.333% - 10px);
     overflow: hidden;
