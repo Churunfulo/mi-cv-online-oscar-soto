@@ -3,146 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería y Redes Sociales</title>
+    <title>Oscar Soto Espinoza - Forense & Etología</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
     <style>
-        /* Estilos generales */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #0d1117;
+            color: #e6e6e6;
+            transition: background-color 0.3s ease;
+        }
+        header {
             text-align: center;
-            background-color: #121212;
-            color: white;
-        }
-
-        /* Estilos de la galería */
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
             padding: 20px;
+            background: linear-gradient(90deg, #1a1f36, #2a344b);
         }
-
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #e6e6e6;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #2a344b;
+            color: #ffffff;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
         .gallery img {
-            width: 150px;
-            height: auto;
-            border-radius: 5px;
+            width: 100%;
+            border-radius: 10px;
             cursor: pointer;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s;
         }
-
         .gallery img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
-
-        /* Estilos para el modal de imagen */
-        .image-modal {
-            display: none;
+        
+        /* Lightbox mejorado */
+        .lightbox {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             display: flex;
+            justify-content: center;
             align-items: center;
-            justify-content: center;
-            z-index: 1000;
             opacity: 0;
-            transition: opacity 0.3s ease-in-out;
+            visibility: hidden;
+            transition: opacity 0.5s ease;
         }
-
-        .image-modal img {
+        .lightbox img {
             max-width: 90%;
-            max-height: 80vh;
+            max-height: 90vh;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
         }
-
-        /* Botón de cierre */
-        .close-btn {
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .lightbox.active img {
+            transform: scale(1);
+        }
+        
+        /* Botón de cierre mejorado */
+        .lightbox .close {
             position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 30px;
-            color: white;
+            top: 20px;
+            right: 30px;
+            font-size: 35px;
+            color: #fff;
             cursor: pointer;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background 0.3s;
+            transition: transform 0.3s ease;
+        }
+        .lightbox .close:hover {
+            transform: scale(1.2);
         }
 
-        .close-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Estilos de redes sociales */
+        /* Redes sociales del mismo tamaño */
         .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            padding-bottom: 20px;
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(13, 17, 23, 0.8);
+            padding: 10px;
+            border-radius: 10px;
         }
-
         .social-links img {
-            width: 50px;
-            height: auto;
+            width: 50px; /* Ajusta todas las imágenes al mismo tamaño */
+            margin: 0 8px;
+            cursor: pointer;
             transition: transform 0.3s;
         }
-
         .social-links img:hover {
             transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Oscar Soto Espinoza</h1>
+        <p>Forense & Etología Canina</p>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#k9">K9</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <section id="galeria">
         <h2>Galería</h2>
-        <p>Explora algunos de los lugares, eventos y proyectos en los que he participado:</p>
         <div class="gallery">
-            <img src="imagen1.jpg" alt="Proyecto tecnológico 1" onclick="openModal('imagen1.jpg')">
-            <img src="imagen2.jpg" alt="Lugar destacado 2" onclick="openModal('imagen2.jpg')">
-            <img src="imagen3.jpg" alt="Evento profesional 3" onclick="openModal('imagen3.jpg')">
-            <img src="imagen4.jpg" alt="Tecnología aplicada 4" onclick="openModal('imagen4.jpg')">
-            <img src="imagen5.jpg" alt="Evento en India" onclick="openModal('imagen5.jpg')">
-            <img src="imagen6.jpg" alt="Evento CLEU" onclick="openModal('imagen6.jpg')">
-            <img src="imagen7.jpg" alt="Evento Brasil" onclick="openModal('imagen7.jpg')">
-            <img src="imagen8.jpg" alt="Evento Argentina" onclick="openModal('imagen8.jpg')">
+            <img src="imagen1.jpg" alt="Proyecto 1" onclick="openLightbox(this)">
+            <img src="imagen2.jpg" alt="Evento 2" onclick="openLightbox(this)">
+            <img src="imagen3.jpg" alt="Evento 3" onclick="openLightbox(this)">
+            <img src="imagen4.jpg" alt="Tecnología aplicada" onclick="openLightbox(this)">
         </div>
     </section>
 
-    <!-- Modal para ver imágenes en grande -->
-    <div id="imageModal" class="image-modal">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <img id="modalImage" src="" alt="Imagen ampliada">
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img">
     </div>
 
-    <!-- Redes Sociales -->
-    <div class="social-links">
+    <section class="social-links">
+        <h2>Sígueme en redes sociales</h2>
         <a href="https://www.linkedin.com" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
-        <a href="https://www.facebook.com" target="_blank"><img src="facebook.png" alt="Facebook"></a>
         <a href="https://www.instagram.com" target="_blank"><img src="instagram.png" alt="Instagram"></a>
-    </div>
+        <a href="https://www.facebook.com" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+    </section>
 
     <script>
-        function openModal(imageSrc) {
-            const modal = document.getElementById("imageModal");
-            const modalImage = document.getElementById("modalImage");
-
-            modalImage.src = imageSrc;
-            modal.style.display = "flex";
-            setTimeout(() => { modal.style.opacity = "1"; }, 10);
+        function openLightbox(img) {
+            let lightbox = document.getElementById("lightbox");
+            let lightboxImg = document.getElementById("lightbox-img");
+            lightboxImg.src = img.src;
+            lightbox.classList.add("active");
         }
-
-        function closeModal() {
-            const modal = document.getElementById("imageModal");
-            modal.style.opacity = "0";
-            setTimeout(() => { modal.style.display = "none"; }, 300);
+        function closeLightbox() {
+            let lightbox = document.getElementById("lightbox");
+            lightbox.classList.remove("active");
         }
     </script>
-
 </body>
 </html>
