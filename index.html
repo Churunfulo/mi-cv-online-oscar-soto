@@ -12,12 +12,19 @@
             padding: 0;
             background-color: #0d1117;
             color: #e6e6e6;
-            transition: background-color 0.3s ease;
+            scroll-behavior: smooth;
         }
         header {
             text-align: center;
             padding: 20px;
             background: linear-gradient(90deg, #1a1f36, #2a344b);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header img {
+            width: 80px;
+            border-radius: 50%;
         }
         nav ul {
             list-style: none;
@@ -36,12 +43,16 @@
             background-color: #2a344b;
             color: #ffffff;
         }
+        section {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
-            margin-top: 20px;
-            text-align: center;
         }
         .gallery img {
             width: 100%;
@@ -52,8 +63,6 @@
         .gallery img:hover {
             transform: scale(1.05);
         }
-        
-        /* Lightbox mejorado */
         .lightbox {
             position: fixed;
             top: 0;
@@ -82,8 +91,6 @@
         .lightbox.active img {
             transform: scale(1);
         }
-        
-        /* Botón de cierre mejorado */
         .lightbox .close {
             position: absolute;
             top: 20px;
@@ -96,22 +103,13 @@
         .lightbox .close:hover {
             transform: scale(1.2);
         }
-
-        /* Redes sociales del mismo tamaño */
         .social-links {
             text-align: center;
             margin-top: 40px;
             padding-bottom: 20px;
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(13, 17, 23, 0.8);
-            padding: 10px;
-            border-radius: 10px;
         }
         .social-links img {
-            width: 50px; /* Ajusta todas las imágenes al mismo tamaño */
+            width: 50px;
             margin: 0 8px;
             cursor: pointer;
             transition: transform 0.3s;
@@ -119,7 +117,6 @@
         .social-links img:hover {
             transform: scale(1.1);
         }
-
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
@@ -130,6 +127,7 @@
 </head>
 <body>
     <header>
+        <img src="logo.png" alt="Logotipo">
         <h1>Oscar Soto Espinoza</h1>
         <p>Forense & Etología Canina</p>
         <nav>
@@ -143,13 +141,30 @@
         </nav>
     </header>
 
+    <section id="inicio">
+        <h2>Inicio</h2>
+        <p>Bienvenido a mi espacio donde comparto conocimientos sobre criminalística, ciencias forenses y etología canina. Aquí encontrarás contenido educativo, análisis de casos y experiencias en el campo.</p>
+    </section>
+
+    <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <p>Soy Oscar Soto Espinoza, experto en criminalística y ciencias forenses. También tengo conocimientos en etología canina. Mi objetivo es compartir información valiosa y fomentar el aprendizaje en estas áreas.</p>
+    </section>
+
+    <section id="k9">
+        <h2>Unidad K9</h2>
+        <p>En este apartado hablo sobre el entrenamiento, comportamiento y aplicación de perros en la detección de sustancias, búsqueda y rescate, y más. Exploro cómo la etología canina se relaciona con la investigación forense.</p>
+    </section>
+
     <section id="galeria">
         <h2>Galería</h2>
         <div class="gallery">
-            <img src="imagen1.jpg" alt="Proyecto 1" onclick="openLightbox(this)">
-            <img src="imagen2.jpg" alt="Evento 2" onclick="openLightbox(this)">
-            <img src="imagen3.jpg" alt="Evento 3" onclick="openLightbox(this)">
-            <img src="imagen4.jpg" alt="Tecnología aplicada" onclick="openLightbox(this)">
+            <img src="imagen1.jpg" alt="Imagen 1" onclick="openLightbox(this)">
+            <img src="imagen2.jpg" alt="Imagen 2" onclick="openLightbox(this)">
+            <img src="imagen3.jpg" alt="Imagen 3" onclick="openLightbox(this)">
+            <img src="imagen4.jpg" alt="Imagen 4" onclick="openLightbox(this)">
+            <img src="imagen5.jpg" alt="Imagen 5" onclick="openLightbox(this)">
+            <img src="imagen6.jpg" alt="Imagen 6" onclick="openLightbox(this)">
         </div>
     </section>
 
@@ -157,6 +172,11 @@
         <span class="close" onclick="closeLightbox()">&times;</span>
         <img id="lightbox-img">
     </div>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Puedes contactarme a través de mis redes sociales o enviarme un correo electrónico.</p>
+    </section>
 
     <section class="social-links">
         <h2>Sígueme en redes sociales</h2>
@@ -179,3 +199,4 @@
     </script>
 </body>
 </html>
+
