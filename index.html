@@ -3,177 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum Vitae - Oscar Soto Espinoza</title>
+    <title>Oscar Soto Espinoza</title>
     <style>
-        /* Estilos generales */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #0d1117;
-            color: #e6e6e6;
-            transition: background-color 0.3s ease;
         }
-
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
         header {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(90deg, #1a1f36, #2a344b);
+            background-color: #222;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
         }
-
-        header img {
-            width: 100px;
-            margin-bottom: 10px;
+        .logo {
+            max-width: 80px;
+            display: block;
+            margin: 0 auto 10px;
         }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        nav {
+            background: #333;
+            padding: 10px;
         }
-
-        nav ul li a {
+        nav a {
+            color: white;
             text-decoration: none;
-            color: #e6e6e6;
-            padding: 5px 10px;
-            transition: background-color 0.3s, color 0.3s;
+            margin: 0 15px;
+            font-size: 18px;
         }
-
-        nav ul li a:hover {
-            background-color: #2a344b;
-            color: #ffffff;
-        }
-
-        section {
-            padding: 40px;
-            text-align: center;
-        }
-
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             margin-top: 20px;
         }
-
         .gallery img {
-            width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s;
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
         }
-
         .gallery img:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
-
-        footer {
-            text-align: center;
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: red;
+            color: white;
+            font-size: 24px;
             padding: 10px;
-            background: #1a1f36;
-            color: #e6e6e6;
+            border-radius: 50%;
+            cursor: pointer;
         }
-
-        /* Compatibilidad móvil */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .gallery {
-                grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
-            }
+        .contact-info {
+            margin-top: 30px;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a img {
+            width: 50px;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
-    <script>
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = scrollTop / docHeight;
 
-            // Nueva paleta de colores modernos y atractivos
-            const startColor = [26, 31, 54]; // #1a1f36 (azul oscuro)
-            const endColor = [42, 52, 75];  // #2a344b (azul grisáceo)
-
-            const red = Math.round(startColor[0] + (endColor[0] - startColor[0]) * scrollPercent);
-            const green = Math.round(startColor[1] + (endColor[1] - startColor[1]) * scrollPercent);
-            const blue = Math.round(startColor[2] + (endColor[2] - startColor[2]) * scrollPercent);
-
-            document.body.style.backgroundColor = rgb(${red}, ${green}, ${blue});
-        });
-    </script>
-
-    <!-- Encabezado con logotipo -->
     <header>
-        <img src="logotipo.png" alt="Logotipo Oscar Soto Espinoza">
-        <h1>Oscar Soto Espinoza</h1>
-        <p>Experto en Criminalística y Ciencias Forenses</p>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+        <img src="logo.png" class="logo" alt="Logo">
+        Oscar Soto Espinoza
     </header>
 
-    <!-- Sección de inicio -->
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#k9">K9</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
     <section id="inicio">
-        <h2>Bienvenido</h2>
-        <p>Explora mi perfil profesional en criminalística y ciencias forenses, con enfoque en tecnologías como drones e inteligencia artificial.</p>
-        <img src="portada.jpg" alt="portada.jpg" style="border-radius: 15px; max-width: 80%;">
+        <h1>Bienvenido a mi sitio</h1>
+        <p>Aquí encontrarás información sobre mi trabajo en ciencias forenses y etología canina.</p>
     </section>
 
-    <!-- Sección "Sobre mí" -->
+    <section id="k9">
+        <h2>Unidad K9</h2>
+        <p>Especialidades: Etología básica y avanzada, Perros de alerta para diabetes, Odorología forense.</p>
+    </section>
+
+    <div class="gallery">
+        <img src="proyecto_tecnologico.jpg" alt="Proyecto Tecnológico" onclick="openImage(this)">
+        <img src="imagen2.jpg" alt="Imagen 2" onclick="openImage(this)">
+        <img src="imagen3.jpg" alt="Imagen 3" onclick="openImage(this)">
+        <img src="imagen4.jpg" alt="Imagen 4" onclick="openImage(this)">
+    </div>
+
+    <div class="overlay" id="overlay">
+        <span class="close-btn" onclick="closeImage()">X</span>
+        <img id="overlay-img">
+    </div>
+
     <section id="sobre-mi">
         <h2>Sobre mí</h2>
-        <p>Hola, soy Oscar Soto Espinoza. Cuento con experiencia en proyectos tecnológicos aplicados a ciencias forenses, como análisis digital, simulaciones y manejo de RPAS (drones).</p>
+        <p>Investigador en Ciencias Forenses y especialista en etología canina.</p>
     </section>
 
-    <!-- Sección "Galería" -->
-    <section id="galeria">
-        <h2>Galería</h2>
-        <p>Explora algunos de los lugares, eventos y proyectos en los que he participado:</p>
-        <div class="gallery">
-            <img src="imagen1.jpg" alt="Proyecto tecnológico 1">
-            <img src="imagen2.jpg" alt="Lugar destacado 2">
-            <img src="imagen3.jpg" alt="Evento profesional 3">
-            <img src="imagen4.jpg" alt="Tecnología aplicada 4">
-            <img src="imagen5.jpg" alt="Evento en india">
-            <img src="imagen6.jpg" alt="Evento cleu">
-            <img src="imagen7.jpg" alt="Evento brasil">
-            <img src="imagen8.jpg" alt="Evento argentina"> 
+    <section id="contacto" class="contact-info">
+        <h2>Contacto</h2>
+        <p>Email: tuemail@correo.com</p>
+        <p>Teléfono: +52 123 456 7890</p>
+        
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/tuperfil" target="_blank">
+                <img src="linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.facebook.com/tuperfil" target="_blank">
+                <img src="facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/tuperfil" target="_blank">
+                <img src="instagram.png" alt="Instagram">
+            </a>
         </div>
     </section>
-   
-    <div class="lightbox" id="lightbox">
-        <span class="close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img">
-    </div>
-    <!-- Sección de contacto -->
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>¿Quieres saber más o colaborar conmigo? Contáctame:</p>
-        <ul>
-            <li>Email: <a href="mailto:oscar.soto@example.com">Periciales.k9@gmail.com</a></li>
-            <li>Teléfono: +52 669 154 5763</li>
-        </ul>
-    </section>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2025 Oscar Soto Espinoza. Todos los derechos reservados.</p>
-    </footer>
+    <script>
+        function openImage(element) {
+            let overlay = document.getElementById("overlay");
+            let overlayImg = document.getElementById("overlay-img");
+            overlay.style.display = "flex";
+            overlayImg.src = element.src;
+        }
+
+        function closeImage() {
+            let overlay = document.getElementById("overlay");
+            overlay.style.display = "none";
+        }
+    </script>
+
 </body>
 </html>
 
-    </footer>
 </body>
 </html>
