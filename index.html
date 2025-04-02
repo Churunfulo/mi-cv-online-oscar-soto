@@ -10,74 +10,48 @@
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             text-align: center;
-            padding-top: 60px; /* Adjust for sticky header */
         }
-
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
             background-color: #222;
             color: white;
-            padding: 15px 0;
+            padding: 15px;
             font-size: 24px;
-            z-index: 10;
-            text-align: center;
         }
-
         .logo {
             max-width: 80px;
-            display: inline-block;
-            margin: 0 10px;
+            display: block;
+            margin: 0 auto 10px;
         }
-
         nav {
             background: #333;
             padding: 10px;
-            position: fixed;
-            top: 60px;
-            width: 100%;
-            z-index: 9;
-            display: flex;
-            justify-content: center;
         }
-
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
         }
-
-        section {
-            padding: 20px;
-        }
-
         .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 20px;
         }
-
         .gallery img {
-            width: calc(25% - 20px);
+            width: 200px;
             height: auto;
             margin: 10px;
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
         }
-
         .gallery img:hover {
             transform: scale(1.1);
         }
-
         .overlay {
             display: none;
             position: fixed;
@@ -88,54 +62,34 @@
             background: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
-
         .overlay img {
             max-width: 90%;
             max-height: 90%;
             border-radius: 10px;
         }
-
         .close-btn {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #00bcd4;
+            top: 10px;
+            right: 10px;
+            background: red;
             color: white;
             font-size: 24px;
             padding: 10px;
             border-radius: 50%;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            z-index: 1000;
         }
-
-        .close-btn:hover {
-            background: #ff5722;
-        }
-
         .contact-info {
             margin-top: 30px;
         }
-
         .social-icons {
             margin-top: 10px;
         }
-
         .social-icons a img {
             width: 50px;
             margin: 0 10px;
-        }
-
-        @media (max-width: 768px) {
-            .gallery img {
-                width: calc(50% - 20px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gallery img {
-                width: calc(100% - 20px);
-            }
         }
     </style>
 </head>
@@ -182,8 +136,8 @@
 
     <section id="contacto" class="contact-info">
         <h2>Contacto</h2>
-        <p>Email: periciales.k9@gmail.com</p>
-        <p>Teléfono: 6691545763</p>
+        <p>Email: tuemail@correo.com</p>
+        <p>Teléfono: +52 123 456 7890</p>
         
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/tuperfil" target="_blank">
