@@ -4,172 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oscar Soto Espinoza</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        header {
-            background-color: #222;
-            color: white;
-            padding: 15px;
-            font-size: 24px;
-        }
-        .logo {
-            max-width: 80px;
-            display: block;
-            margin: 0 auto 10px;
-        }
-        nav {
-            background: #333;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .gallery img {
-            width: 200px;
-            height: auto;
-            margin: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-        }
-        .gallery img:hover {
-            transform: scale(1.1);
-        }
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .overlay img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-        }
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: red;
-            color: white;
-            font-size: 24px;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 1000;
-        }
-        .contact-info {
-            margin-top: 30px;
-        }
-        .social-icons {
-            margin-top: 10px;
-        }
-        .social-icons a img {
-            width: 50px;
-            margin: 0 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <header>
-        <img src="logotipo.png" class="logo" alt="Logo">
-        Oscar Soto Espinoza
+        <nav class="navbar">
+            <div class="logo">Oscar Soto Espinoza</div>
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#forense">Forense</a></li>
+                <li><a href="#k9">K9</a></li>
+                <li><a href="#noticias">Menciones y Eventos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#k9">K9</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#gallery">Galleria</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-
-    <section id="inicio">
-        <h1>Bienvenido a mi sitio</h1>
-        <p>Aquí encontrarás información sobre mi trabajo en ciencias forenses y etología canina.</p>
-    </section>
-
-    <section id="k9">
-        <h2>Unidad K9</h2>
-        <p>Especialidades: Etología básica y avanzada, Perros de alerta para diabetes, Odorología forense.</p>
     
-    </section id="galleria">
-    <div class="Gallery">
-        <img src="imagen1.jpg" alt="Imagen 1" onclick="openImage(this)">
-        <img src="imagen2.jpg" alt="Imagen 2" onclick="openImage(this)">
-        <img src="imagen3.jpg" alt="Imagen 3" onclick="openImage(this)">
-        <img src="imagen4.jpg" alt="Imagen 4" onclick="openImage(this)">
-        <img src="imagen5.jpg" alt="Imagen 5" onclick="openImage(this)">
-        <img src="imagen6.jpg" alt="Imagen 6" onclick="openImage(this)">
-        <img src="imagen7.jpg" alt="Imagen 7" onclick="openImage(this)">
-        <img src="imagen8.jpg" alt="Imagen 8" onclick="openImage(this)">
-    </div>
-
-    <div class="overlay" id="overlay">
-        <span class="close-btn" onclick="closeImage()">X</span>
-        <img id="overlay-img">
-    </div>
-
-    <section id="sobre-mi">
-        <h2>Sobre mí</h2>
-        <p>Investigador en Ciencias Forenses y especialista en etología canina.</p>
+    <section id="inicio">
+        <h1>Bienvenido a mi página</h1>
+        <p>Explora mi trabajo en criminalística y el entrenamiento K9.</p>
     </section>
-
-    <section id="contacto" class="contact-info">
-        <h2>Contacto</h2>
-        <p>Email: Periciales.k9@gmail.com</p>
-        <p>Teléfono: 6691545763</p>
-        
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/tuperfil" target="_blank">
-                <img src="linkedin.png" alt="LinkedIn">
-            </a>
-            <a href="https://www.facebook.com/tuperfil" target="_blank">
-                <img src="facebook.png" alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com/tuperfil" target="_blank">
-                <img src="instagram.png" alt="Instagram">
-            </a>
+    
+    <section id="forense" class="theme-forense">
+        <h2>Forense</h2>
+        <p>Información sobre mi trabajo en ciencias forenses.</p>
+    </section>
+    
+    <section id="k9" class="theme-k9">
+        <h2>Entrenamiento K9</h2>
+        <p>Entrenamiento básico, avanzado y especializado en odorología forense.</p>
+    </section>
+    
+    <section id="noticias">
+        <h2>Menciones y Eventos</h2>
+        <p>Aquí encontrarás enlaces a noticias y eventos donde he participado:</p>
+        <ul>
+            <li><a href="#">Noticia 1</a></li>
+            <li><a href="#">Noticia 2</a></li>
+            <li><a href="#">Noticia 3</a></li>
+        </ul>
+    </section>
+    
+    <section id="galleria">
+        <h2>Galería</h2>
+        <div class="gallery">
+            <img src="imagen1.jpg" alt="Descripción imagen 1" onclick="openModal(this)">
+            <img src="imagen2.jpg" alt="Descripción imagen 2" onclick="openModal(this)">
+            <img src="imagen3.jpg" alt="Descripción imagen 3" onclick="openModal(this)">
+            <img src="imagen4.jpg" alt="Descripción imagen 4" onclick="openModal(this)">
+            <img src="imagen5.jpg" alt="Descripción imagen 5" onclick="openModal(this)">
         </div>
     </section>
-
-    <script>
-        function openImage(element) {
-            let overlay = document.getElementById("overlay");
-            let overlayImg = document.getElementById("overlay-img");
-            overlay.style.display = "flex";
-            overlayImg.src = element.src;
-        }
-
-        function closeImage() {
-            let overlay = document.getElementById("overlay");
-            overlay.style.display = "none";
-        }
-    </script>
-
+    
+    <footer>
+        <p>Contacto: periciales.k9@gmail.com</p>
+    </footer>
+    
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
