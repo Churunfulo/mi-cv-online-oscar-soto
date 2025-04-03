@@ -1,71 +1,169 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oscar Soto Espinoza</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Oscar Soto Espinoza</div>
-            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#forense">Forense</a></li>
-                <li><a href="#k9">K9</a></li>
-                <li><a href="#noticias">Menciones y Eventos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="inicio">
-        <h1>Bienvenido a mi página</h1>
-        <p>Explora mi trabajo en criminalística y el entrenamiento K9.</p>
-    </section>
-    
-    <section id="forense" class="theme-forense">
-        <h2>Forense</h2>
-        <p>Información sobre mi trabajo en ciencias forenses.</p>
-    </section>
-    
-    <section id="k9" class="theme-k9">
-        <h2>Entrenamiento K9</h2>
-        <p>Entrenamiento básico, avanzado y especializado en odorología forense.</p>
-    </section>
-    
-    <section id="noticias">
-        <h2>Menciones y Eventos</h2>
-        <p>Aquí encontrarás enlaces a noticias y eventos donde he participado:</p>
-        <ul>
-            <li><a href="#">Noticia 1</a></li>
-            <li><a href="#">Noticia 2</a></li>
-            <li><a href="#">Noticia 3</a></li>
-        </ul>
-    </section>
-    
-    <section id="galleria">
-        <h2>Galería</h2>
-        <div class="gallery">
-            <img src="imagen1.jpg" alt="Descripción imagen 1" onclick="openModal(this)">
-            <img src="imagen2.jpg" alt="Descripción imagen 2" onclick="openModal(this)">
-            <img src="imagen3.jpg" alt="Descripción imagen 3" onclick="openModal(this)">
-            <img src="imagen4.jpg" alt="Descripción imagen 4" onclick="openModal(this)">
-            <img src="imagen5.jpg" alt="Descripción imagen 5" onclick="openModal(this)">
-        </div>
-    </section>
-    
-    <footer>
-        <p>Contacto: periciales.k9@gmail.com</p>
-    </footer>
-    
-    <div id="modal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modal-img">
-    </div>
-    
-    <script src="script.js"></script>
-</body>
-</html>
+/* General */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #e1eaf7; /* Fondo futurista */
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background-color: #161b22;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header img {
+    height: 60px;
+    width: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #00b4d8;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #00b4d8;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #90e0ef;
+}
+
+/* Secciones */
+section {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section#inicio img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    color: #00b4d8;
+    font-size: 1.6rem;
+    border-bottom: 2px solid #00b4d8;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #cfcfcf;
+}
+
+/* 🔹 Galería de imágenes RESPONSIVA */
+section#galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px;
+    justify-content: center;
+}
+
+.galeria-item {
+    width: 100%;
+    max-width: 400px; /* Evita que sean demasiado grandes */
+    margin: auto; /* Centra los elementos */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Hover */
+.galeria-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* 📌 Ajuste específico para dispositivos móviles */
+@media (max-width: 768px) {
+    section#galeria {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+    .galeria-item {
+        max-width: 90%;
+    }
+}
+
+/* Contacto */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #90e0ef;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #caf0f8;
+}
+
+/* Footer */
+footer {
+    background-color: #161b22;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #282c34;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Interacción */
+nav ul li a:hover,
+ul li a:hover,
+.galeria-item:hover {
+    cursor: pointer;
+}
